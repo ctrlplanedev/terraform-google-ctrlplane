@@ -21,7 +21,7 @@ variable "subnetwork" {
 variable "machine_type" {
   description = "The machine type for the cluster"
   type        = string
-  default     = "n4-standard-4"
+  default     = "n2-standard-4"
 }
 
 variable "node_count" {
