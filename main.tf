@@ -1,6 +1,6 @@
 module "project_factory_project_services" {
   source                      = "terraform-google-modules/project-factory/google//modules/project_services"
-  version                     = "~> 14.0"
+  version                     = "~> 16.0"
   project_id                  = null
   disable_dependent_services  = false
   disable_services_on_destroy = false
@@ -26,6 +26,8 @@ module "database" {
   source             = "./modules/database"
   namespace          = var.namespace
   network_connection = local.network_connection
+  availability_type  = var.database_availability_type
+  pg_version         = var.database_version
 }
 
 module "service_accounts" {

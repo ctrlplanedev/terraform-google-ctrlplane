@@ -6,7 +6,7 @@ resource "random_string" "master_password" {
 resource "random_pet" "postgres" {
   length = 2
   keepers = {
-    namespace = var.database_version
+    namespace = var.pg_version
   }
 }
 
@@ -19,10 +19,11 @@ locals {
 
 resource "google_sql_database_instance" "postgres" {
   name             = local.master_instance_name
-  database_version = var.database_version
+  database_version = var.pg_version
 
   settings {
-    tier = var.tier
+    tier              = var.tier
+    availability_type = var.availability_type
     ip_configuration {
       ipv4_enabled    = false
       private_network = var.network_connection.network

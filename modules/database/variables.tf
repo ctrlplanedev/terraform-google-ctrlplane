@@ -3,7 +3,7 @@ variable "namespace" {
   type        = string
 }
 
-variable "database_version" {
+variable "pg_version" {
   description = "Version for Postgres"
   type        = string
   default     = "POSTGRES_16"
@@ -18,4 +18,10 @@ variable "tier" {
   description = "The tier for the Postgres instance"
   type        = string
   default     = "db-f1-micro"
+}
+
+variable "availability_type" {
+  description = "The availability type for the Postgres instance"
+  type        = string
+  default     = "REGIONAL"
 }
