@@ -30,6 +30,8 @@ module "database" {
 
   network_connection_string = local.network_connection_string
 
+  postgres_tier = var.postgres_tier
+
   depends_on = [module.networking]
 }
 

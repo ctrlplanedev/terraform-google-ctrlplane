@@ -22,7 +22,7 @@ resource "google_sql_database_instance" "this" {
   database_version = var.database_version
 
   settings {
-    tier = var.tier
+    tier = var.postgres_tier
     ip_configuration {
       ipv4_enabled    = false
       private_network = var.network_connection_string

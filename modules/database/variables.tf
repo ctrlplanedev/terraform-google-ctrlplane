@@ -14,8 +14,7 @@ variable "network_connection_string" {
   type        = string
 }
 
-variable "tier" {
+variable "postgres_tier" {
   description = "The tier for the Postgres instance"
   type        = string
-  default     = "db-f1-micro"
 }

@@ -17,15 +17,3 @@ variable "subnetwork_self_link" {
   description = "The subnetwork self link."
   type        = string
 }
-
-variable "machine_type" {
-  description = "The machine type for the cluster"
-  type        = string
-  default     = "n2-standard-4"
-}
-
-variable "node_count" {
-  description = "The number of nodes in the cluster"
-  type        = number
-  default     = 1
-}
