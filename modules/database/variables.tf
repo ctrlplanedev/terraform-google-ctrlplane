@@ -9,9 +9,9 @@ variable "database_version" {
   default     = "POSTGRES_16"
 }
 
-variable "network_connection" {
-  description = "The private service networking connection that will connect Postgres to the network."
-  type        = object({ network = string })
+variable "network_connection_string" {
+  description = "The private service networking connection string that will connect Postgres to the network."
+  type        = string
 }
 
 variable "tier" {

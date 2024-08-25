@@ -3,19 +3,19 @@ variable "namespace" {
   type        = string
 }
 
-variable "service_account" {
-  description = "The service account associated with the GKE cluster instances to host Ctrlplane."
-  type        = object({ email = string })
+variable "service_account_email" {
+  description = "The service account email associated with the GKE cluster instances to host Ctrlplane."
+  type        = string
 }
 
-variable "network" {
-  description = "Google Compute Engine network to which the cluster is connected."
-  type        = object({ self_link = string })
+variable "network_self_link" {
+  description = "The network self link."
+  type        = string
 }
 
-variable "subnetwork" {
-  description = "Google Compute Engine subnetwork in which the cluster's instances are launched."
-  type        = object({ self_link = string })
+variable "subnetwork_self_link" {
+  description = "The subnetwork self link."
+  type        = string
 }
 
 variable "machine_type" {

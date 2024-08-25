@@ -14,18 +14,23 @@ module "project_factory_project_services" {
 module "networking" {
   source    = "./modules/networking"
   namespace = var.namespace
+
+  depends_on = [module.project_factory_project_services]
 }
 
 locals {
-  network_connection = try(module.networking.connection)
-  network            = try(module.networking.network)
-  subnetwork         = try(module.networking.subnetwork)
+  network_connection_string = try(module.networking.network_connection_string)
+  network_self_link         = try(module.networking.network_self_link)
+  subnetwork_self_link      = try(module.networking.subnetwork_self_link)
 }
 
 module "database" {
-  source             = "./modules/database"
-  namespace          = var.namespace
-  network_connection = local.network_connection
+  source    = "./modules/database"
+  namespace = var.namespace
+
+  network_connection_string = local.network_connection_string
+
+  depends_on = [module.networking]
 }
 
 module "service_accounts" {
@@ -34,9 +39,13 @@ module "service_accounts" {
 }
 
 module "gke" {
-  source          = "./modules/gke"
-  namespace       = var.namespace
-  network         = local.network
-  subnetwork      = local.subnetwork
-  service_account = module.service_accounts.service_account
+  source    = "./modules/gke"
+  namespace = var.namespace
+
+  network_self_link    = local.network_self_link
+  subnetwork_self_link = local.subnetwork_self_link
+
+  service_account_email = module.service_accounts.service_account_email
+
+  depends_on = [module.networking, module.service_accounts]
 }
