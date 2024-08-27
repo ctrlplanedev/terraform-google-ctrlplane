@@ -27,7 +27,7 @@ module "database" {
   postgres_tier    = var.postgres_tier
   postgres_version = var.postgres_version
 
-  delete_protection = var.delete_protection
+  deletion_protection = var.deletion_protection
 
   depends_on = [module.networking]
 }
@@ -51,7 +51,7 @@ module "gke" {
   source    = "./modules/gke"
   namespace = var.namespace
 
-  deletion_protection = var.delete_protection
+  deletion_protection = var.deletion_protection
 
   network_self_link    = module.networking.network_self_link
   subnetwork_self_link = module.networking.subnetwork_self_link

@@ -27,7 +27,7 @@ variable "redis_memory_size_gb" {
   default     = 1
 }
 
-variable "delete_protection" {
+variable "deletion_protection" {
   description = "Whether to enable deletion protection for the resources."
   type        = bool
   default     = true

@@ -19,7 +19,7 @@ variable "postgres_tier" {
   type        = string
 }
 
-variable "delete_protection" {
+variable "deletion_protection" {
   description = "Whether to enable deletion protection for the database instance."
   type        = bool
   default     = true
