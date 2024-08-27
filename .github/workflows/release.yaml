@@ -27,10 +27,12 @@ jobs:
       - name: Release
         uses: cycjimmy/semantic-release-action@v2
         with:
-          semantic_version: 19.0.2
+          semantic_version: 24.1.0
           extra_plugins: |
-            @semantic-release/changelog@6.0.1
+            @semantic-release/changelog@6.0.3
             @semantic-release/git@10.0.1
-            conventional-changelog-conventionalcommits@4.6.3
+            conventional-changelog-conventionalcommits@8.0.0
+          branches: |
+            ['main']
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
