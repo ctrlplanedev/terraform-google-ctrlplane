@@ -7,7 +7,7 @@ resource "random_id" "this" {
 
 resource "google_service_account" "this" {
   account_id   = substr(random_id.this.dec, 0, 30)
-  display_name = "Ctrlplane"
+  display_name = "${var.namespace} Ctrlplane"
   description  = "Service Account used by Ctrlplane."
 }
 
