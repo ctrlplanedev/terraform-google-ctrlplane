@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.0...v1.0.1) (2024-08-27)
+
+### Bug Fixes
+
+* Init tf ([689187e](https://github.com/sizzldev/terraform-google-ctrlplane/commit/689187e44406eb501adb7da70aa34e39b228823c))
+
 ## 1.0.0 (2024-08-27)
 
 ### Bug Fixes
