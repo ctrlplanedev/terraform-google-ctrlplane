@@ -3,12 +3,6 @@ variable "namespace" {
   description = "The name prefix for all resources created."
 }
 
-variable "database_delete_protection" {
-  description = "Whether to enable deletion protection for the database instance."
-  type        = bool
-  default     = true
-}
-
 variable "postgres_tier" {
   description = "The tier for the Postgres instance"
   type        = string
@@ -33,8 +27,8 @@ variable "redis_memory_size_gb" {
   default     = 1
 }
 
-variable "gke_delete_protection" {
-  description = "Whether to enable deletion protection for the GKE cluster."
+variable "delete_protection" {
+  description = "Whether to enable deletion protection for the resources."
   type        = bool
   default     = true
 }
