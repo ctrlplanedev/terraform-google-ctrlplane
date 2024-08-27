@@ -17,3 +17,9 @@ variable "subnetwork_self_link" {
   description = "The subnetwork self link."
   type        = string
 }
+
+variable "deletion_protection" {
+  description = "Whether to enable deletion protection for the database instance."
+  type        = bool
+  default     = true
+}

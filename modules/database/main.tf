@@ -6,7 +6,7 @@ resource "random_string" "this" {
 resource "random_pet" "this" {
   length = 2
   keepers = {
-    namespace = var.database_version
+    namespace = var.postgres_version
   }
 }
 
@@ -19,7 +19,7 @@ locals {
 
 resource "google_sql_database_instance" "this" {
   name             = local.master_instance_name
-  database_version = var.database_version
+  database_version = var.postgres_version
 
   settings {
     tier = var.postgres_tier

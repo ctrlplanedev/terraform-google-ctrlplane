@@ -6,6 +6,8 @@ resource "google_container_cluster" "this" {
 
   enable_autopilot = true
 
+  deletion_protection = var.deletion_protection
+
   node_config {
     service_account = var.service_account_email
   }

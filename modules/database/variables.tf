@@ -3,7 +3,7 @@ variable "namespace" {
   type        = string
 }
 
-variable "database_version" {
+variable "postgres_version" {
   description = "Version for Postgres"
   type        = string
   default     = "POSTGRES_16"
@@ -17,4 +17,10 @@ variable "network_connection_string" {
 variable "postgres_tier" {
   description = "The tier for the Postgres instance"
   type        = string
+}
+
+variable "delete_protection" {
+  description = "Whether to enable deletion protection for the database instance."
+  type        = bool
+  default     = true
 }

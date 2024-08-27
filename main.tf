@@ -22,6 +22,7 @@ locals {
   network_connection_string = try(module.networking.network_connection_string)
   network_self_link         = try(module.networking.network_self_link)
   subnetwork_self_link      = try(module.networking.subnetwork_self_link)
+  network_id                = try(module.networking.network_id)
 }
 
 module "database" {
@@ -30,9 +31,22 @@ module "database" {
 
   network_connection_string = local.network_connection_string
 
-  postgres_tier = var.postgres_tier
+  postgres_tier    = var.postgres_tier
+  postgres_version = var.postgres_version
+
+  delete_protection = var.database_delete_protection
 
   depends_on = [module.networking]
+}
+
+module "redis" {
+  source    = "./modules/redis"
+  namespace = var.namespace
+
+  tier           = var.redis_tier
+  memory_size_gb = var.redis_memory_size_gb
+
+  network_id = local.network_id
 }
 
 module "service_accounts" {
@@ -43,6 +57,8 @@ module "service_accounts" {
 module "gke" {
   source    = "./modules/gke"
   namespace = var.namespace
+
+  deletion_protection = var.gke_delete_protection
 
   network_self_link    = local.network_self_link
   subnetwork_self_link = local.subnetwork_self_link
