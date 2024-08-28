@@ -9,8 +9,6 @@ resource "google_redis_instance" "this" {
 
   auth_enabled = true
 
-  transit_encryption_mode = "SERVER_AUTHENTICATION"
-
   redis_configs = {
     maxmemory_policy = "noeviction"
   }

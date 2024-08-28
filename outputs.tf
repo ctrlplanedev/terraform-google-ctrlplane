@@ -18,11 +18,6 @@ output "database_instance_private_ip_address" {
   description = "The private IP address of the database instance."
 }
 
-output "redis_ca_cert" {
-  value       = module.redis.redis_ca_cert
-  description = "The CA certificate of the Redis instance."
-}
-
 output "redis_auth_string" {
   value       = module.redis.redis_auth_string
   description = "The authentication string of the Redis instance."
