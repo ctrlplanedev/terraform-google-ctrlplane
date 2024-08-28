@@ -27,3 +27,11 @@ resource "google_project_iam_member" "sa_creator" {
   role    = "roles/iam.serviceAccountCreator"
   member  = local.sa_member
 }
+
+resource "google_service_account_iam_binding" "this" {
+  service_account_id = google_service_account.this.id
+  role               = "roles/iam.workloadIdentityUser"
+  members = [
+    "serviceAccount:${local.project_id}.svc.id.goog[default/ctrlplane-${var.namespace}-sa]"
+  ]
+}

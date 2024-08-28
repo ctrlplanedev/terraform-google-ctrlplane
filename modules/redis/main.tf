@@ -10,7 +10,7 @@ resource "google_redis_instance" "this" {
   auth_enabled = true
 
   redis_configs = {
-    maxmemory_policy = "noeviction"
+    maxmemory-policy = "noeviction"
   }
 
   persistence_config {
