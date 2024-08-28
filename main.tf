@@ -5,9 +5,11 @@ module "project_factory_project_services" {
   disable_dependent_services  = false
   disable_services_on_destroy = false
   activate_apis = [
-    "sqladmin.googleapis.com",          // Database
-    "networkmanagement.googleapis.com", // Networking
-    "servicenetworking.googleapis.com", // Networking
+    "iam.googleapis.com",
+    "sqladmin.googleapis.com",
+    "networkmanagement.googleapis.com",
+    "servicenetworking.googleapis.com",
+    "redis.googleapis.com",
   ]
 }
 
@@ -36,8 +38,9 @@ module "redis" {
   source    = "./modules/redis"
   namespace = var.namespace
 
-  tier           = var.redis_tier
-  memory_size_gb = var.redis_memory_size_gb
+  tier                = var.redis_tier
+  memory_size_gb      = var.redis_memory_size_gb
+  rdb_snapshot_period = var.redis_rdb_snapshot_period
 
   network_id = module.networking.network_id
 }
