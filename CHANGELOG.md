@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.1...v1.0.2) (2024-08-28)
+
+### Bug Fixes
+
+* Redis updates and sa cluster permissions ([04f5d33](https://github.com/sizzldev/terraform-google-ctrlplane/commit/04f5d33b49c6db5b829555d04c65e6b854f0a20b))
+
 ## [1.0.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.0...v1.0.1) (2024-08-27)
 
 ### Bug Fixes
