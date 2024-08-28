@@ -1,3 +1,9 @@
+data "google_client_config" "current" {}
+
+locals {
+  project_id = data.google_client_config.current.project
+}
+
 resource "google_container_cluster" "this" {
   name = "${var.namespace}-cluster"
 
@@ -8,8 +14,8 @@ resource "google_container_cluster" "this" {
 
   deletion_protection = var.deletion_protection
 
-  node_config {
-    service_account = var.service_account_email
+  workload_identity_config {
+    workload_pool = "${local.project_id}.svc.id.goog"
   }
 
   release_channel {

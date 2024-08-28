@@ -27,6 +27,12 @@ variable "redis_memory_size_gb" {
   default     = 1
 }
 
+variable "redis_rdb_snapshot_period" {
+  description = "The snapshot period for the Redis instance."
+  type        = string
+  default     = "ONE_HOUR"
+}
+
 variable "deletion_protection" {
   description = "Whether to enable deletion protection for the resources."
   type        = bool

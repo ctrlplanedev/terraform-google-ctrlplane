@@ -17,3 +17,8 @@ variable "memory_size_gb" {
   description = "The memory size for the Redis instance."
   type        = number
 }
+
+variable "rdb_snapshot_period" {
+  description = "The snapshot period for the Redis instance."
+  type        = string
+}
