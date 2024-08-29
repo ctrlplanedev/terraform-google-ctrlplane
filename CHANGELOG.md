@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.2...v1.1.0) (2024-08-29)
+
+### Features
+
+* Init helm release ([0e28dc0](https://github.com/sizzldev/terraform-google-ctrlplane/commit/0e28dc072b2fd995a9fef76886d154fd921a6894))
+* Init helm release ([4be05af](https://github.com/sizzldev/terraform-google-ctrlplane/commit/4be05afc07e160d41074a59f03e8d7f1c7165b4d))
+
 ## [1.0.2](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.1...v1.0.2) (2024-08-28)
 
 ### Bug Fixes
