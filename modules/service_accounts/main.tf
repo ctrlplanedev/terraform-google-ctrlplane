@@ -32,6 +32,6 @@ resource "google_service_account_iam_binding" "this" {
   service_account_id = google_service_account.this.id
   role               = "roles/iam.workloadIdentityUser"
   members = [
-    "serviceAccount:${local.project_id}.svc.id.goog[default/ctrlplane-${var.namespace}-sa]"
+    "serviceAccount:${local.project_id}.svc.id.goog[default/${google_service_account.this.email}]"
   ]
 }
