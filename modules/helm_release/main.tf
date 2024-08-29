@@ -44,36 +44,36 @@ resource "helm_release" "this" {
   }
 
   set {
-    name  = "global.webservice.serviceAccount.create"
+    name  = "webservice.serviceAccount.create"
     value = true
   }
 
   set {
-    name = "global.webservice.serviceAccount.annotations"
+    name = "webservice.serviceAccount.annotations"
     value = yamlencode({
       "iam.gke.io/gcp-service-account" = var.service_account_email
     })
   }
 
   set {
-    name  = "global.job-policy-checker.serviceAccount.create"
+    name  = "job-policy-checker.serviceAccount.create"
     value = true
   }
 
   set {
-    name = "global.job-policy-checker.serviceAccount.annotations"
+    name = "job-policy-checker.serviceAccount.annotations"
     value = yamlencode({
       "iam.gke.io/gcp-service-account" = var.service_account_email
     })
   }
 
   set {
-    name  = "global.migrations.serviceAccount.create"
+    name  = "migrations.serviceAccount.create"
     value = true
   }
 
   set {
-    name = "global.migrations.serviceAccount.annotations"
+    name = "migrations.serviceAccount.annotations"
     value = yamlencode({
       "iam.gke.io/gcp-service-account" = var.service_account_email
     })
