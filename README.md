@@ -22,6 +22,7 @@ follows:
 module "ctrlplane" {
   source    = "sizzldev/ctrlplane/google"
   namespace = "ctrlplane"
+  domains   = ["<fqdn>"]
 }
 ```
 
