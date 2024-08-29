@@ -3,79 +3,59 @@ resource "helm_release" "this" {
   chart      = "ctrlplane"
   repository = "https://charts.ctrlplane.dev/"
 
-  set {
-    name  = "global.redis.host"
-    value = var.redis_host
-  }
 
   set {
-    name  = "global.redis.port"
-    value = var.redis_port
-  }
-
-  set {
-    name  = "global.redis.password"
-    value = var.redis_password
-  }
-
-  set {
-    name  = "global.postgresql.user"
-    value = var.postgres_user
-  }
-
-  set {
-    name  = "global.postgresql.password"
-    value = var.postgres_password
-  }
-
-  set {
-    name  = "global.postgresql.host"
-    value = var.postgres_host
-  }
-
-  set {
-    name  = "global.postgresql.port"
-    value = var.postgres_port
-  }
-
-  set {
-    name  = "global.postgresql.database"
-    value = var.postgres_database
-  }
-
-  set {
-    name  = "webservice.serviceAccount.create"
-    value = true
-  }
-
-  set {
-    name = "webservice.serviceAccount.annotations"
+    name = "global"
     value = yamlencode({
-      "iam.gke.io/gcp-service-account" = var.service_account_email
+      "postgres" = {
+        "user"     = var.postgres_user
+        "password" = var.postgres_password
+        "host"     = var.postgres_host
+        "port"     = var.postgres_port
+        "database" = var.postgres_database
+      }
+
+      "reds" = {
+        "host"     = var.redis_host
+        "port"     = var.redis_port
+        "password" = var.redis_password
+      }
     })
   }
 
   set {
-    name  = "job-policy-checker.serviceAccount.create"
-    value = true
-  }
-
-  set {
-    name = "job-policy-checker.serviceAccount.annotations"
+    name = "webservice"
     value = yamlencode({
-      "iam.gke.io/gcp-service-account" = var.service_account_email
+      "serviceAccount" = {
+        "create" = true
+        "annotations" = {
+          "iam.gke.io/gcp-service-account" = var.service_account_email
+        }
+      }
     })
   }
 
   set {
-    name  = "migrations.serviceAccount.create"
-    value = true
+    name = "job-policy-checker"
+    value = yamlencode({
+      "serviceAccount" = {
+        "create" = true
+        "annotations" = {
+          "iam.gke.io/gcp-service-account" = var.service_account_email
+        }
+      }
+    })
   }
 
   set {
-    name = "migrations.serviceAccount.annotations"
+    name = "migrations"
     value = yamlencode({
-      "iam.gke.io/gcp-service-account" = var.service_account_email
+      "serviceAccount" = {
+        "create" = true
+        "annotations" = {
+          "iam.gke.io/gcp-service-account" = var.service_account_email
+        }
+      }
     })
   }
 }
