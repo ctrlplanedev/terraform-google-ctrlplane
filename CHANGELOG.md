@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.0...v1.1.1) (2024-08-29)
+
+### Bug Fixes
+
+* clean up sa identity ([dd05352](https://github.com/sizzldev/terraform-google-ctrlplane/commit/dd05352431e8aeee395cbcecc2141138d3cf4b23))
+
 ## [1.1.0](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.0.2...v1.1.0) (2024-08-29)
 
 ### Features
