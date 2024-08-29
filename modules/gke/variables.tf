@@ -3,11 +3,6 @@ variable "namespace" {
   type        = string
 }
 
-variable "service_account_email" {
-  description = "The service account email associated with the GKE cluster instances to host Ctrlplane."
-  type        = string
-}
-
 variable "network_self_link" {
   description = "The network self link."
   type        = string

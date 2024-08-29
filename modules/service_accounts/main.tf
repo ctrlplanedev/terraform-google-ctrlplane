@@ -1,18 +1,13 @@
 data "google_client_config" "current" {}
 
-resource "random_id" "this" {
-  byte_length = 30
-  prefix      = "${var.namespace}-sa-"
-}
-
-resource "google_service_account" "this" {
-  account_id   = substr(random_id.this.dec, 0, 30)
+resource "google_service_account" "gke" {
+  account_id   = "${var.namespace}-gke"
   display_name = "${var.namespace} Ctrlplane"
   description  = "Service Account used by Ctrlplane."
 }
 
 locals {
-  sa_member  = "serviceAccount:${google_service_account.this.email}"
+  sa_member  = "serviceAccount:${google_service_account.gke.email}"
   project_id = data.google_client_config.current.project
 }
 
@@ -28,12 +23,16 @@ resource "google_project_iam_member" "sa_creator" {
   member  = local.sa_member
 }
 
-resource "google_service_account_iam_binding" "this" {
-  service_account_id = google_service_account.this.id
+locals {
+  gke_namespace = "default"
+}
+
+resource "google_service_account_iam_binding" "gke" {
+  service_account_id = google_service_account.gke.id
   role               = "roles/iam.workloadIdentityUser"
   members = [
-    "serviceAccount:${local.project_id}.svc.id.goog[default/ctrlplane-webservice]",
-    "serviceAccount:${local.project_id}.svc.id.goog[default/ctrlplane-job-policy-checker]",
-    "serviceAccount:${local.project_id}.svc.id.goog[default/ctrlplane-migrations]"
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-webservice]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-job-policy-checker]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]"
   ]
 }

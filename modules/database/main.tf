@@ -3,26 +3,20 @@ resource "random_string" "this" {
   special = false
 }
 
-resource "random_pet" "this" {
-  length = 2
-  keepers = {
-    namespace = var.postgres_version
-  }
-}
-
 locals {
-  database_name        = "ctrlplane"
-  master_username      = "ctrlplane"
-  master_password      = random_string.this.result
-  master_instance_name = "${var.namespace}-${random_pet.this.id}"
+  database_name   = "ctrlplane"
+  master_username = "ctrlplane"
+  master_password = random_string.this.result
 }
 
 resource "google_sql_database_instance" "this" {
-  name             = local.master_instance_name
+  name             = var.namespace
   database_version = var.postgres_version
 
   settings {
-    tier = var.postgres_tier
+    tier                        = var.postgres_tier
+    deletion_protection_enabled = var.deletion_protection
+
     ip_configuration {
       ipv4_enabled    = false
       private_network = var.network_connection_string

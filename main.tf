@@ -24,7 +24,7 @@ module "database" {
   source    = "./modules/database"
   namespace = var.namespace
 
-  network_connection_string = module.networking.network_connection_string
+  network_connection_string = module.networking.connection.network
 
   postgres_tier    = var.postgres_tier
   postgres_version = var.postgres_version
@@ -42,12 +42,9 @@ module "redis" {
   memory_size_gb      = var.redis_memory_size_gb
   rdb_snapshot_period = var.redis_rdb_snapshot_period
 
-  network_id = module.networking.network_id
-}
+  network_id = module.networking.network.id
 
-module "service_accounts" {
-  source    = "./modules/service_accounts"
-  namespace = var.namespace
+  depends_on = [module.networking]
 }
 
 module "gke" {
@@ -56,12 +53,17 @@ module "gke" {
 
   deletion_protection = var.deletion_protection
 
-  network_self_link    = module.networking.network_self_link
-  subnetwork_self_link = module.networking.subnetwork_self_link
+  network_self_link    = module.networking.network.self_link
+  subnetwork_self_link = module.networking.subnetwork.self_link
 
-  service_account_email = module.service_accounts.service_account_email
+  depends_on = [module.networking]
+}
 
-  depends_on = [module.networking, module.service_accounts]
+module "service_accounts" {
+  source    = "./modules/service_accounts"
+  namespace = var.namespace
+
+  depends_on = [module.gke]
 }
 
 resource "google_compute_global_address" "this" {
@@ -93,7 +95,7 @@ module "helm_release" {
   postgres_port     = 5432
   postgres_database = module.database.database_name
 
-  service_account_email = module.service_accounts.service_account_email
+  service_account_email = module.service_accounts.gke_service_account.email
 
   global_static_ip_name = google_compute_global_address.this.name
   pre_shared_cert       = google_compute_managed_ssl_certificate.this.name

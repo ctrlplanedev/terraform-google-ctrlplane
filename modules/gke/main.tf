@@ -5,7 +5,7 @@ locals {
 }
 
 resource "google_container_cluster" "this" {
-  name = "${var.namespace}-cluster"
+  name = var.namespace
 
   network    = var.network_self_link
   subnetwork = var.subnetwork_self_link
