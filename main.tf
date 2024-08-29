@@ -74,7 +74,7 @@ module "helm_release" {
   postgres_user     = module.database.sql_user_username
   postgres_password = module.database.sql_user_password
   postgres_host     = module.database.database_instance_private_ip_address
-  postgres_port     = "3306"
+  postgres_port     = 3306
   postgres_database = module.database.database_name
 
   service_account_email = module.service_accounts.service_account_email
