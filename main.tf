@@ -63,3 +63,40 @@ module "gke" {
 
   depends_on = [module.networking, module.service_accounts]
 }
+
+resource "google_compute_global_address" "this" {
+  name = "${var.namespace}-address"
+}
+
+resource "google_compute_managed_ssl_certificate" "this" {
+  name = "${var.namespace}-cert"
+
+  managed {
+    domains = var.domains
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+module "helm_release" {
+  source = "./modules/helm_release"
+
+  redis_host     = module.redis.redis_host
+  redis_port     = module.redis.redis_port
+  redis_password = module.redis.redis_auth_string
+
+  postgres_user     = module.database.sql_user_username
+  postgres_password = module.database.sql_user_password
+  postgres_host     = module.database.database_instance_private_ip_address
+  postgres_port     = 5432
+  postgres_database = module.database.database_name
+
+  service_account_email = module.service_accounts.service_account_email
+
+  global_static_ip_name = google_compute_global_address.this.name
+  pre_shared_cert       = google_compute_managed_ssl_certificate.this.name
+
+  depends_on = [module.gke, module.database, module.redis, module.service_accounts]
+}

@@ -5,5 +5,10 @@ terraform {
       source  = "hashicorp/google"
       version = "~> 5.42"
     }
+
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.15"
+    }
   }
 }
