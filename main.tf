@@ -64,6 +64,22 @@ module "gke" {
   depends_on = [module.networking, module.service_accounts]
 }
 
+resource "google_compute_global_address" "this" {
+  name = "${var.namespace}-address"
+}
+
+resource "google_compute_managed_ssl_certificate" "this" {
+  name = "${var.namespace}-cert"
+
+  managed {
+    domains = var.domains
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
 module "helm_release" {
   source = "./modules/helm_release"
 
@@ -78,6 +94,9 @@ module "helm_release" {
   postgres_database = module.database.database_name
 
   service_account_email = module.service_accounts.service_account_email
+
+  global_static_ip_name = google_compute_global_address.this.name
+  pre_shared_cert       = google_compute_managed_ssl_certificate.this.name
 
   depends_on = [module.gke]
 }

@@ -42,3 +42,11 @@ variable "service_account_email" {
   type        = string
   description = "The service account email."
 }
+
+variable "global_static_ip_name" {
+  type = string
+}
+
+variable "pre_shared_cert" {
+  type = string
+}

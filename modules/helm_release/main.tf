@@ -24,6 +24,19 @@ resource "helm_release" "this" {
   }
 
   set {
+    name = "ingress"
+    value = yamlencode({
+      "enabled" = true
+      "annotations" = {
+        "kubernetes.io/ingress.class"                 = "gce"
+        "kubernetes.io/ingress.global-static-ip-name" = var.global_static_ip_name
+        "ingress.gcp.kubernetes.io/pre-shared-cert"   = var.pre_shared_cert
+        "kubernetes.io/ingress.allow-http"            = "false"
+      }
+    })
+  }
+
+  set {
     name = "webservice"
     value = yamlencode({
       "serviceAccount" = {
