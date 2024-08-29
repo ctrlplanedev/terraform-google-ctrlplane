@@ -13,4 +13,5 @@ provider "google-beta" {
 module "ctrlplane" {
   source    = "../../"
   namespace = var.namespace
+  domains  = ["example.com"]
 }
