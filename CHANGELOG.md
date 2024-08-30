@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.1...v1.2.2) (2024-08-30)
+
+### Bug Fixes
+
+* increase default db size ([533ef26](https://github.com/sizzldev/terraform-google-ctrlplane/commit/533ef2638666f4d5b9bba55f0b581477f8d44f14))
+
 ## [1.2.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.0...v1.2.1) (2024-08-30)
 
 ### Bug Fixes
