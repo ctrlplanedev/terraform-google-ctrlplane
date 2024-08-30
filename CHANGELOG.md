@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.0...v1.2.1) (2024-08-30)
+
+### Bug Fixes
+
+* add option for fqdn ([a39dc53](https://github.com/sizzldev/terraform-google-ctrlplane/commit/a39dc533cb1989cb4d921238a7b345c41206e8f8))
+
 ## [1.2.0](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.2...v1.2.0) (2024-08-30)
 
 ### Features
