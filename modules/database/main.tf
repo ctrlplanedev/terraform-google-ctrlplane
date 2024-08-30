@@ -21,6 +21,10 @@ resource "google_sql_database_instance" "this" {
       ipv4_enabled    = false
       private_network = var.network_connection_string
     }
+
+    insights_config {
+      query_insights_enabled = true
+    }
   }
 }
 

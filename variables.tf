@@ -11,7 +11,7 @@ variable "namespace" {
 variable "postgres_tier" {
   description = "The tier for the Postgres instance"
   type        = string
-  default     = "db-f1-micro"
+  default     = "db-custom-2-7680"
 }
 
 variable "postgres_version" {
