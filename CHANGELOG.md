@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.2...v1.2.0) (2024-08-30)
+
+### Features
+
+*  ability to pass in google auth info ([3541824](https://github.com/sizzldev/terraform-google-ctrlplane/commit/354182430192d0cee80af69b1570bce3d13ced53))
+
 ## [1.1.2](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.1...v1.1.2) (2024-08-30)
 
 ### Bug Fixes
