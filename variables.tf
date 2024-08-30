@@ -59,5 +59,5 @@ variable "google_auth" {
 
 variable "chart_version" {
   type    = string
-  default = "0.1.17"
+  default = "0.1.20"
 }
