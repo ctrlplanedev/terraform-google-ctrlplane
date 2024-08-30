@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.1...v1.1.2) (2024-08-30)
+
+### Bug Fixes
+
+* helm auth and args ([56fa5dd](https://github.com/sizzldev/terraform-google-ctrlplane/commit/56fa5dde5f23de33fa0095b4150aa02307d4f946))
+
 ## [1.1.1](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.1.0...v1.1.1) (2024-08-29)
 
 ### Bug Fixes
