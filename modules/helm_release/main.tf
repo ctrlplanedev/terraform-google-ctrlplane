@@ -1,4 +1,9 @@
 locals {
+
+  other_settings = {
+    "global.fqdn" = var.fqdn,
+  }
+
   image_tags = {
     "migrations.image.tag"         = "26397ff",
     "webservice.image.tag"         = "0d18a53",
@@ -47,10 +52,11 @@ resource "helm_release" "this" {
   name       = "ctrlplane"
   chart      = "ctrlplane"
   repository = "https://charts.ctrlplane.dev/"
-  version    = "0.1.15"
+  version    = var.chart_version
 
   dynamic "set" {
     for_each = merge(
+      local.other_settings,
       local.image_tags,
       local.auth_providers_settings,
       local.postgres_settings,

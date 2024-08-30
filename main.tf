@@ -85,6 +85,10 @@ resource "google_compute_managed_ssl_certificate" "this" {
 module "helm_release" {
   source = "./modules/helm_release"
 
+  fqdn = var.fqdn
+
+  chart_version = var.chart_version
+
   google_auth = var.google_auth
 
   redis_host     = module.redis.redis_host

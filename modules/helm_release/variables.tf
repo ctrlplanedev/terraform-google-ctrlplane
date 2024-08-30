@@ -52,9 +52,18 @@ variable "pre_shared_cert" {
 }
 
 variable "google_auth" {
-  type        = object({
+  type = object({
     client_id     = string
     client_secret = string
   })
   description = "The Google OAuth client ID and secret."
+}
+
+variable "chart_version" {
+  type = string
+}
+
+variable "fqdn" {
+  type    = string
+  default = ""
 }

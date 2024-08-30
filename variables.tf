@@ -1,3 +1,8 @@
+variable "fqdn" {
+  type        = string
+  description = "The fully qualified domain name for the resources."
+}
+
 variable "namespace" {
   type        = string
   description = "The name prefix for all resources created."
@@ -45,9 +50,14 @@ variable "domains" {
 }
 
 variable "google_auth" {
-  type        = object({
+  type = object({
     client_id     = string
     client_secret = string
   })
   description = "The Google OAuth client ID and secret."
+}
+
+variable "chart_version" {
+  type    = string
+  default = "0.1.17"
 }
