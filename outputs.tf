@@ -32,3 +32,17 @@ output "redis_port" {
   value       = module.redis.redis_port
   description = "The port of the Redis instance."
 }
+
+output "cluster_ca_certificate" {
+  value     = module.gke.cluster_ca_certificate
+  sensitive = true
+}
+
+output "cluster_endpoint" {
+  value     = module.gke.cluster_endpoint
+  sensitive = true
+}
+
+output "ip" {
+  value = google_compute_global_address.this.address
+}

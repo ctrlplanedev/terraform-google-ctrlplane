@@ -42,5 +42,4 @@ variable "deletion_protection" {
 variable "domains" {
   description = "The domains to use for the SSL certificate."
   type        = list(string)
-
 }

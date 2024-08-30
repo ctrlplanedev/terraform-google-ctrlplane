@@ -10,6 +10,16 @@ provider "google-beta" {
   zone    = var.zone
 }
 
+data "google_client_config" "current" {}
+
+provider "helm" {
+  kubernetes {
+    host                   = "https://${module.ctrlplane.cluster_endpoint}"
+    cluster_ca_certificate = base64decode(module.ctrlplane.cluster_ca_certificate)
+    token                  = data.google_client_config.current.access_token
+  }
+}
+
 module "ctrlplane" {
   source    = "../../"
   namespace = var.namespace
