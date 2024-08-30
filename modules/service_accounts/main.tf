@@ -33,6 +33,7 @@ resource "google_service_account_iam_binding" "gke" {
   members = [
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-webservice]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-job-policy-checker]",
-    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]"
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-worker]",
   ]
 }

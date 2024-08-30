@@ -43,3 +43,11 @@ variable "domains" {
   description = "The domains to use for the SSL certificate."
   type        = list(string)
 }
+
+variable "google_auth" {
+  type        = object({
+    client_id     = string
+    client_secret = string
+  })
+  description = "The Google OAuth client ID and secret."
+}
