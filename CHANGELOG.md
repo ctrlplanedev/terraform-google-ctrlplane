@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.4](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.3...v1.2.4) (2024-09-03)
+
+### Bug Fixes
+
+* Correct service account annotations ([#6](https://github.com/sizzldev/terraform-google-ctrlplane/issues/6)) ([126d292](https://github.com/sizzldev/terraform-google-ctrlplane/commit/126d292dd82ef72a9689210daef0e3fb2ef1fed9))
+
 ## [1.2.3](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.2...v1.2.3) (2024-08-30)
 
 ### Bug Fixes
