@@ -5,10 +5,10 @@ locals {
   }
 
   image_tags = {
-    "migrations.image.tag"         = "fb31148",
-    "webservice.image.tag"         = "fb31148",
-    "event-worker.image.tag"       = "fb31148",
-    "job-policy-checker.image.tag" = "fb31148",
+    "migrations.image.tag"         = "933eea0",
+    "webservice.image.tag"         = "933eea0",
+    "event-worker.image.tag"       = "876d342",
+    "job-policy-checker.image.tag" = "933eea0",
   }
 
   postgres_settings = {
@@ -37,14 +37,14 @@ locals {
   }
 
   service_account_annotations = {
-    "webservice.serviceAccount.create"                                  = true,
-    "webservice.annotations.iam\\.gke\\.io/gcp-service-account"         = var.service_account_email,
-    "job-policy-checker.serviceAccount.create"                          = true,
-    "job-policy-checker.annotations.iam\\.gke\\.io/gcp-service-account" = var.service_account_email,
-    "migrations.serviceAccount.create"                                  = true,
-    "migrations.annotations.iam\\.gke\\.io/gcp-service-account"         = var.service_account_email,
-    "event-worker.serviceAccount.create"                                = true,
-    "event-worker.annotations.iam\\.gke\\.io/gcp-service-account"       = var.service_account_email,
+    "webservice.serviceAccount.create"                                                 = true,
+    "webservice.serviceAcount.annotations.iam\\.gke\\.io/gcp-service-account"          = var.service_account_email,
+    "job-policy-checker.serviceAccount.create"                                         = true,
+    "job-policy-checker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account" = var.service_account_email,
+    "migrations.serviceAccount.create"                                                 = true,
+    "migrations.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"         = var.service_account_email,
+    "event-worker.serviceAccount.create"                                               = true,
+    "event-worker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"       = var.service_account_email,
   }
 }
 
