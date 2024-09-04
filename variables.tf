@@ -59,5 +59,17 @@ variable "google_auth" {
 
 variable "chart_version" {
   type    = string
-  default = "0.1.20"
+  default = "0.1.23"
+}
+
+variable "github_bot" {
+  type = object({
+    name               = string
+    app_id             = string
+    client_id          = string
+    client_secret      = string
+    client_private_key = string
+  })
+  description = "The GitHub bot user and token."
+  default     = null
 }

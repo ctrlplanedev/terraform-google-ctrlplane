@@ -67,3 +67,15 @@ variable "fqdn" {
   type    = string
   default = ""
 }
+
+variable "github_bot" {
+  type = object({
+    name             = string
+    app_id             = string
+    client_id          = string
+    client_secret      = string
+    client_private_key = string
+  })
+  description = "The GitHub bot user and token."
+  default     = null
+}

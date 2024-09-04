@@ -91,6 +91,8 @@ module "helm_release" {
 
   google_auth = var.google_auth
 
+  github_bot = var.github_bot
+
   redis_host     = module.redis.redis_host
   redis_port     = module.redis.redis_port
   redis_password = module.redis.redis_auth_string

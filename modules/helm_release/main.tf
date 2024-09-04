@@ -19,6 +19,14 @@ locals {
     "global.postgresql.database" = var.postgres_database,
   }
 
+  integrations_settings = var.github_bot != null ? {
+    "global.integrations.github.bot.name"         = var.github_bot.name
+    "global.integrations.github.bot.appId"        = var.github_bot.app_id
+    "global.integrations.github.bot.clientId"     = var.github_bot.client_id
+    "global.integrations.github.bot.clientSecret" = var.github_bot.client_secret
+    "global.integrations.github.bot.privateKey"   = var.github_bot.client_private_key
+  } : {}
+
   auth_providers_settings = {
     "global.authProviders.google.clientId"     = var.google_auth.client_id,
     "global.authProviders.google.clientSecret" = var.google_auth.client_secret,
@@ -62,7 +70,8 @@ resource "helm_release" "this" {
       local.postgres_settings,
       local.redis_settings,
       local.ingress_annotations,
-      local.service_account_annotations
+      local.service_account_annotations,
+      local.integrations_settings,
     )
     content {
       name  = set.key
