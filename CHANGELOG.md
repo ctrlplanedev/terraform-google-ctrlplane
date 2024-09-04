@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.5](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.4...v1.2.5) (2024-09-04)
+
+### Bug Fixes
+
+* add github bot options ([d7dc7b8](https://github.com/sizzldev/terraform-google-ctrlplane/commit/d7dc7b87b32aa25fafcb6fad052ee5fedb855a61))
+
 ## [1.2.4](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.3...v1.2.4) (2024-09-03)
 
 ### Bug Fixes
