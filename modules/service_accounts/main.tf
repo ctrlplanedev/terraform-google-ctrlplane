@@ -17,9 +17,9 @@ resource "google_project_iam_member" "cloudsql_client" {
   member  = local.sa_member
 }
 
-resource "google_project_iam_member" "sa_creator" {
+resource "google_project_iam_member" "sa_admin" {
   project = local.project_id
-  role    = "roles/iam.serviceAccountCreator"
+  role    = "roles/iam.serviceAccountAdmin"
   member  = local.sa_member
 }
 
