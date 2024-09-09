@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.7](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.6...v1.2.7) (2024-09-09)
+
+### Bug Fixes
+
+* pod permissions to create sa ([23897c4](https://github.com/sizzldev/terraform-google-ctrlplane/commit/23897c4339f7979a1e1ca1b72f34d86565ad1ae9))
+
 ## [1.2.6](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.5...v1.2.6) (2024-09-09)
 
 ### Bug Fixes
