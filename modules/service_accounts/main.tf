@@ -11,25 +11,8 @@ locals {
   project_id = data.google_client_config.current.project
 }
 
-resource "google_project_iam_member" "cloudsql_client" {
-  project = local.project_id
-  role    = "roles/cloudsql.client"
-  member  = local.sa_member
-}
-
-resource "google_project_iam_member" "sa_admin" {
-  project = local.project_id
-  role    = "roles/iam.serviceAccountAdmin"
-  member  = local.sa_member
-}
-
 locals {
   gke_namespace = "default"
-}
-
-resource "google_service_account_iam_binding" "gke" {
-  service_account_id = google_service_account.gke.id
-  role               = "roles/iam.workloadIdentityUser"
   members = [
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-webservice]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-job-policy-checker]",
@@ -37,3 +20,34 @@ resource "google_service_account_iam_binding" "gke" {
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-worker]",
   ]
 }
+
+resource "google_service_account_iam_member" "gke_workload_identity" {
+  for_each = toset(local.members)
+
+  service_account_id = google_service_account.gke.id
+  role               = "roles/iam.workloadIdentityUser"
+  member             = each.value
+}
+
+resource "google_project_iam_member" "gke_workload_sa_admin" {
+  for_each = toset(local.members)
+
+  project = local.project_id
+  role    = "roles/iam.serviceAccountAdmin"
+  member  = each.value
+}
+
+resource "google_project_iam_member" "gke_workload_sa_user" {
+  for_each = toset(local.members)
+
+  project = local.project_id
+  role    = "roles/iam.serviceAccountUser"
+  member  = each.value
+}
+
+resource "google_project_iam_member" "gke_sa_user" {
+  project = local.project_id
+  role    = "roles/iam.serviceAccountUser"
+  member  = local.sa_member
+}
+

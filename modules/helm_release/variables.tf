@@ -70,7 +70,7 @@ variable "fqdn" {
 
 variable "github_bot" {
   type = object({
-    name             = string
+    name               = string
     app_id             = string
     client_id          = string
     client_secret      = string
