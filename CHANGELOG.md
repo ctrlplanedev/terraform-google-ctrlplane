@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.6](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.5...v1.2.6) (2024-09-09)
+
+### Bug Fixes
+
+* Give accounts service account admin to allow google integration ([5f76f6b](https://github.com/sizzldev/terraform-google-ctrlplane/commit/5f76f6be2e024e2c9e7a4c0adcf9e351ec57d4ba))
+
 ## [1.2.5](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.4...v1.2.5) (2024-09-04)
 
 ### Bug Fixes
