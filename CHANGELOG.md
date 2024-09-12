@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.8](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.7...v1.2.8) (2024-09-12)
+
+### Bug Fixes
+
+* inccorect impersonate permissions ([5afad43](https://github.com/sizzldev/terraform-google-ctrlplane/commit/5afad433d3b7e79f295d62317ceda1a657a26d69))
+
 ## [1.2.7](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.6...v1.2.7) (2024-09-09)
 
 ### Bug Fixes
