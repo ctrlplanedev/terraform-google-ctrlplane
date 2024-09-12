@@ -45,9 +45,16 @@ resource "google_project_iam_member" "gke_workload_sa_user" {
   member  = each.value
 }
 
-resource "google_project_iam_member" "gke_sa_user" {
+resource "google_project_iam_member" "gke_workload_sa_token_creator" {
+  for_each = toset(local.members)
+
   project = local.project_id
-  role    = "roles/iam.serviceAccountUser"
-  member  = local.sa_member
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = each.value
 }
 
+resource "google_project_iam_member" "gke_sa_token_creator" {
+  project = local.project_id
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = local.sa_member
+}
