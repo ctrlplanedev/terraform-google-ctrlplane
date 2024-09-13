@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.9](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.8...v1.2.9) (2024-09-13)
+
+### Bug Fixes
+
+* Update image tags ([5c71c6c](https://github.com/sizzldev/terraform-google-ctrlplane/commit/5c71c6cca3595b3d0f55cafee21fcbf40c3e0048))
+
 ## [1.2.8](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.7...v1.2.8) (2024-09-12)
 
 ### Bug Fixes
