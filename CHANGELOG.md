@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.10](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.9...v1.2.10) (2024-09-18)
+
+### Bug Fixes
+
+* not applying the correct perms to cluster roles ([3c926af](https://github.com/sizzldev/terraform-google-ctrlplane/commit/3c926afddda8efeb67ebc6613488573aa7723ac0))
+
 ## [1.2.9](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.8...v1.2.9) (2024-09-13)
 
 ### Bug Fixes
