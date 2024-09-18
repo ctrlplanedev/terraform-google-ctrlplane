@@ -22,7 +22,7 @@ locals {
 }
 
 resource "google_service_account_iam_member" "gke_workload_identity" {
-  for_each = toset(local.members)
+  for_each = { for idx, member in local.members : idx => member }
 
   service_account_id = google_service_account.gke.id
   role               = "roles/iam.workloadIdentityUser"
@@ -30,7 +30,7 @@ resource "google_service_account_iam_member" "gke_workload_identity" {
 }
 
 resource "google_project_iam_member" "gke_workload_sa_admin" {
-  for_each = toset(local.members)
+  for_each = { for idx, member in local.members : idx => member }
 
   project = local.project_id
   role    = "roles/iam.serviceAccountAdmin"
@@ -38,7 +38,7 @@ resource "google_project_iam_member" "gke_workload_sa_admin" {
 }
 
 resource "google_project_iam_member" "gke_workload_sa_user" {
-  for_each = toset(local.members)
+  for_each = { for idx, member in local.members : idx => member }
 
   project = local.project_id
   role    = "roles/iam.serviceAccountUser"
@@ -46,7 +46,7 @@ resource "google_project_iam_member" "gke_workload_sa_user" {
 }
 
 resource "google_project_iam_member" "gke_workload_sa_token_creator" {
-  for_each = toset(local.members)
+  for_each = { for idx, member in local.members : idx => member }
 
   project = local.project_id
   role    = "roles/iam.serviceAccountTokenCreator"
