@@ -59,7 +59,7 @@ variable "google_auth" {
 
 variable "chart_version" {
   type    = string
-  default = "0.1.23"
+  default = "0.1.28"
 }
 
 variable "github_bot" {
@@ -72,4 +72,9 @@ variable "github_bot" {
   })
   description = "The GitHub bot user and token."
   default     = null
+}
+
+variable "helm_values" {
+  type    = any
+  default = { otel = { install = true } }
 }

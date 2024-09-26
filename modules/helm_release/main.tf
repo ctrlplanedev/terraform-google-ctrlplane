@@ -5,10 +5,10 @@ locals {
   }
 
   image_tags = {
-    "webservice.image.tag"         = "1675b2b",
-    "migrations.image.tag"         = "5dd5951",
-    "event-worker.image.tag"       = "3194fbe",
-    "job-policy-checker.image.tag" = "3194fbe",
+    "webservice.image.tag"         = "cc9109e",
+    "migrations.image.tag"         = "c478a3c",
+    "event-worker.image.tag"       = "a29ef6c",
+    "job-policy-checker.image.tag" = "a29ef6c",
   }
 
   postgres_settings = {
@@ -56,6 +56,12 @@ locals {
   }
 }
 
+locals {
+  default_values = {}
+  # Merge default values with overrides
+  merged_values = merge(local.default_values, var.values)
+}
+
 resource "helm_release" "this" {
   name       = "ctrlplane"
   chart      = "ctrlplane"
@@ -78,4 +84,6 @@ resource "helm_release" "this" {
       value = set.value
     }
   }
+
+  values = [yamlencode(local.merged_values)]
 }

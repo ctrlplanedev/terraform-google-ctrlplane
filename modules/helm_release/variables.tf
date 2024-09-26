@@ -79,3 +79,7 @@ variable "github_bot" {
   description = "The GitHub bot user and token."
   default     = null
 }
+
+variable "values" {
+  type = map(any)
+}
