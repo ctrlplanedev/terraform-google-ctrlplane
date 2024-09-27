@@ -1,14 +1,13 @@
 locals {
-
   other_settings = {
     "global.fqdn" = var.fqdn,
   }
 
   image_tags = {
-    "webservice.image.tag"         = "cc9109e",
+    "webservice.image.tag"         = "38a36a8",
     "migrations.image.tag"         = "c478a3c",
-    "event-worker.image.tag"       = "a29ef6c",
-    "job-policy-checker.image.tag" = "a29ef6c",
+    "event-worker.image.tag"       = "65ca82e",
+    "job-policy-checker.image.tag" = "65ca82e",
   }
 
   postgres_settings = {
