@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.12](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.11...v1.2.12) (2024-09-27)
+
+### Bug Fixes
+
+* bump helm chart ([6b53f24](https://github.com/sizzldev/terraform-google-ctrlplane/commit/6b53f2499963ea7ec0102a1dfed3b96653a42214))
+
 ## [1.2.11](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.10...v1.2.11) (2024-09-26)
 
 ### Bug Fixes
