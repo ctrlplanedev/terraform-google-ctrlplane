@@ -83,6 +83,7 @@ resource "google_compute_managed_ssl_certificate" "this" {
 }
 
 module "helm_release" {
+  count  = var.deploy_helm_release ? 1 : 0
   source = "./modules/helm_release"
 
   fqdn = var.fqdn

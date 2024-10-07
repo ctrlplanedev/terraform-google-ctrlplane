@@ -78,3 +78,8 @@ variable "helm_values" {
   type    = any
   default = { otel = { install = true } }
 }
+
+variable "deploy_helm_release" {
+  type    = bool
+  default = true
+}
