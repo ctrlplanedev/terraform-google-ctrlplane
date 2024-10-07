@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.13...v1.3.0) (2024-10-07)
+
+### Features
+
+* optional enable helm deployment ([783143e](https://github.com/sizzldev/terraform-google-ctrlplane/commit/783143ec53f4c170dd2e82b79065d50af385314c))
+
 ## [1.2.13](https://github.com/sizzldev/terraform-google-ctrlplane/compare/v1.2.12...v1.2.13) (2024-10-01)
 
 ### Bug Fixes
