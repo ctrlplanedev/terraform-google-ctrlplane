@@ -20,7 +20,7 @@ follows:
 
 ```hcl
 module "ctrlplane" {
-  source    = "sizzldev/ctrlplane/google"
+  source    = "ctrlplanedev/ctrlplane/google"
   namespace = "ctrlplane"
   domains   = ["<fqdn>"]
 }
