@@ -75,6 +75,7 @@ variable "github_bot" {
     client_id          = string
     client_secret      = string
     client_private_key = string
+    webhook_secret     = string
   })
   description = "The GitHub bot user and token."
   default     = null

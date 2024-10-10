@@ -4,10 +4,10 @@ locals {
   }
 
   image_tags = {
-    "webservice.image.tag"         = "9fce138",
-    "migrations.image.tag"         = "57101f8",
-    "event-worker.image.tag"       = "57101f8",
-    "job-policy-checker.image.tag" = "57101f8",
+    "webservice.image.tag"         = "55631d3",
+    "migrations.image.tag"         = "e2b19bd",
+    "event-worker.image.tag"       = "78ed086",
+    "job-policy-checker.image.tag" = "78ed086",
   }
 
   postgres_settings = {
@@ -19,11 +19,12 @@ locals {
   }
 
   integrations_settings = var.github_bot != null ? {
-    "global.integrations.github.bot.name"         = var.github_bot.name
-    "global.integrations.github.bot.appId"        = var.github_bot.app_id
-    "global.integrations.github.bot.clientId"     = var.github_bot.client_id
-    "global.integrations.github.bot.clientSecret" = var.github_bot.client_secret
-    "global.integrations.github.bot.privateKey"   = var.github_bot.client_private_key
+    "global.integrations.github.bot.name"          = var.github_bot.name
+    "global.integrations.github.bot.appId"         = var.github_bot.app_id
+    "global.integrations.github.bot.clientId"      = var.github_bot.client_id
+    "global.integrations.github.bot.clientSecret"  = var.github_bot.client_secret
+    "global.integrations.github.bot.privateKey"    = var.github_bot.client_private_key
+    "global.integrations.github.bot.webhookSecret" = var.github_bot.webhook_secret
   } : {}
 
   auth_providers_settings = {
