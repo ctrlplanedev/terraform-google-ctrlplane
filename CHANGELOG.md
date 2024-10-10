@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.3.0...v1.3.1) (2024-10-10)
+
+### Bug Fixes
+
+* Add gh webhook secret ([#7](https://github.com/ctrlplanedev/terraform-google-ctrlplane/issues/7)) ([6a6cbe0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/6a6cbe0660313fbaf11a38751a69e3957bcdc655))
+* Bump image versions ([0708068](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/07080689da955023c2eec80524472428de330cb2))
+* remove all sizzl refs ([cf9fe2e](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/cf9fe2e665cd67cefde04726aa255d36e2602eb6))
+
 ## [1.3.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.2.13...v1.3.0) (2024-10-07)
 
 ### Features
