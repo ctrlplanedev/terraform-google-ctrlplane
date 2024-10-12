@@ -4,10 +4,10 @@ locals {
   }
 
   image_tags = {
-    "webservice.image.tag"         = "e2b19bd",
-    "migrations.image.tag"         = "e2b19bd",
-    "event-worker.image.tag"       = "e2b19bd",
-    "job-policy-checker.image.tag" = "e2b19bd",
+    "webservice.image.tag"         = "a324758",
+    "migrations.image.tag"         = "f8372a7",
+    "event-worker.image.tag"       = "a324758",
+    "job-policy-checker.image.tag" = "a324758",
   }
 
   postgres_settings = {

@@ -13,6 +13,12 @@ module "project_factory_project_services" {
   ]
 }
 
+data "google_client_config" "current" {}
+
+locals {
+  project_id = data.google_client_config.current.project
+}
+
 module "networking" {
   source    = "./modules/networking"
   namespace = var.namespace
@@ -32,6 +38,13 @@ module "database" {
   deletion_protection = var.deletion_protection
 
   depends_on = [module.networking]
+}
+
+module "storage" {
+  source    = "./modules/storage"
+  namespace = var.namespace
+
+  deletion_protection = var.deletion_protection
 }
 
 module "redis" {
