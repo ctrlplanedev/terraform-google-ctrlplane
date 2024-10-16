@@ -1,20 +1,21 @@
 locals {
-  other_settings = {
-    "global.fqdn" = var.fqdn,
+
+  config = {
+    global = { fqdn = var.fqdn }
   }
 
   image_tags = {
-    "webservice.image.tag"         = "a324758",
-    "migrations.image.tag"         = "f8372a7",
-    "event-worker.image.tag"       = "a324758",
-    "job-policy-checker.image.tag" = "a324758",
+    "webservice.image.tag"         = "f505293",
+    "migrations.image.tag"         = "a6faaf3",
+    "event-worker.image.tag"       = "f505293",
+    "job-policy-checker.image.tag" = "f505293",
   }
 
   postgres_settings = {
     "global.postgresql.user"     = var.postgres_user,
     "global.postgresql.password" = var.postgres_password,
     "global.postgresql.host"     = var.postgres_host,
-    "global.postgresql.port"     = var.postgres_port,
+    "global.postgresql.port"     = tostring(var.postgres_port),
     "global.postgresql.database" = var.postgres_database,
   }
 
@@ -35,7 +36,7 @@ locals {
   redis_settings = {
     "global.redis.host"     = var.redis_host,
     "global.redis.password" = var.redis_password,
-    "global.redis.port"     = var.redis_port,
+    "global.redis.port"     = tostring(var.redis_port),
   }
 
   ingress_annotations = {
@@ -70,7 +71,6 @@ resource "helm_release" "this" {
 
   dynamic "set" {
     for_each = merge(
-      local.other_settings,
       local.image_tags,
       local.auth_providers_settings,
       local.postgres_settings,
@@ -85,5 +85,5 @@ resource "helm_release" "this" {
     }
   }
 
-  values = [yamlencode(local.merged_values)]
+  values = [yamlencode(local.merged_values), yamlencode(local.config)]
 }
