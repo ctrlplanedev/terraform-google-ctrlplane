@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.4.4...v1.4.5) (2024-10-19)
+
+### Bug Fixes
+
+* values type ([a0d9da1](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/a0d9da115a9a621639a286363b10c7c90b767298))
+
 ## [1.4.4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.4.3...v1.4.4) (2024-10-19)
 
 ### Bug Fixes
