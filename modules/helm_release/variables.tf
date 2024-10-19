@@ -82,5 +82,6 @@ variable "github_bot" {
 }
 
 variable "values" {
-  type = map(any)
+  type    = any
+  default = {}
 }
