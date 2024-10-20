@@ -18,10 +18,10 @@ locals {
       },
     },
 
-    webservice           = { image = { tag = "f505293" } },
-    migrations           = { image = { tag = "a6faaf3" } },
-    "event-worker"       = { image = { tag = "f505293" } },
-    "job-policy-checker" = { image = { tag = "f505293" } },
+    webservice     = { image = { tag = "8264bfc" } },
+    migrations     = { image = { tag = "c19dd39" } },
+    "event-worker" = { image = { tag = "8264bfc" } },
+    "jobs"         = { image = { tag = "8264bfc" } },
   }
 
   integrations_settings = var.github_bot != null ? {
@@ -45,14 +45,14 @@ locals {
   }
 
   service_account_annotations = {
-    "webservice.serviceAccount.create"                                                 = true,
-    "webservice.serviceAcount.annotations.iam\\.gke\\.io/gcp-service-account"          = var.service_account_email,
-    "job-policy-checker.serviceAccount.create"                                         = true,
-    "job-policy-checker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account" = var.service_account_email,
-    "migrations.serviceAccount.create"                                                 = true,
-    "migrations.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"         = var.service_account_email,
-    "event-worker.serviceAccount.create"                                               = true,
-    "event-worker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"       = var.service_account_email,
+    "webservice.serviceAccount.create"                                           = true,
+    "webservice.serviceAcount.annotations.iam\\.gke\\.io/gcp-service-account"    = var.service_account_email,
+    "jobs.serviceAccount.create"                                                 = true,
+    "jobs.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"         = var.service_account_email,
+    "migrations.serviceAccount.create"                                           = true,
+    "migrations.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"   = var.service_account_email,
+    "event-worker.serviceAccount.create"                                         = true,
+    "event-worker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account" = var.service_account_email,
   }
 }
 

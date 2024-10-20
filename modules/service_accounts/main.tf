@@ -15,7 +15,7 @@ locals {
   gke_namespace = "default"
   members = [
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-webservice]",
-    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-job-policy-checker]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-jobs]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-worker]",
   ]
