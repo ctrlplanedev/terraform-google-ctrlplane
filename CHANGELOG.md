@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.4.5...v1.5.0) (2024-10-20)
+
+### Features
+
+* change to jobs image ([295395e](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/295395e5ed4fbdb5b5a224237f2a03e13753f434))
+
 ## [1.4.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.4.4...v1.4.5) (2024-10-19)
 
 ### Bug Fixes
