@@ -59,7 +59,7 @@ variable "google_auth" {
 
 variable "chart_version" {
   type    = string
-  default = "0.1.39"
+  default = "0.2.0"
 }
 
 variable "github_bot" {
