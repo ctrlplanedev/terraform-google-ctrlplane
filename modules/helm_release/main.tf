@@ -21,7 +21,7 @@ locals {
     webservice     = { image = { tag = "8264bfc" } },
     migrations     = { image = { tag = "c19dd39" } },
     "event-worker" = { image = { tag = "8264bfc" } },
-    "jobs"         = { image = { tag = "8264bfc" } },
+    jobs         = { image = { tag = "8264bfc" } },
   }
 
   integrations_settings = var.github_bot != null ? {
