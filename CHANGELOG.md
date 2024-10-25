@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.5.1...v1.6.0) (2024-10-25)
+
+### Features
+
+* Bump postgresql to 17 ([9d1f35d](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/9d1f35d1041481e29d1078a9e24e721c17cb85ca))
+
 ## [1.5.1](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.5.0...v1.5.1) (2024-10-20)
 
 ### Bug Fixes
