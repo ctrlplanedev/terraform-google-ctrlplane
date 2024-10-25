@@ -17,7 +17,7 @@ variable "postgres_tier" {
 variable "postgres_version" {
   description = "The version for the Postgres instance"
   type        = string
-  default     = "POSTGRES_16"
+  default     = "POSTGRES_17"
 }
 
 variable "redis_tier" {
