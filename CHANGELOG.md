@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.2](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.1...v1.6.2) (2024-11-02)
+
+### Bug Fixes
+
+* bump chart version ([7d9a134](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/7d9a1348704af71ad3ce1ba977c872e7126e5b3b))
+
 ## [1.6.1](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.0...v1.6.1) (2024-11-01)
 
 ### Bug Fixes
