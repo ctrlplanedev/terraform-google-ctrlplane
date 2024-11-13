@@ -17,6 +17,10 @@ resource "google_sql_database_instance" "this" {
     tier                        = var.postgres_tier
     deletion_protection_enabled = var.deletion_protection
 
+    backup_configuration {
+      enabled = true
+    }
+
     ip_configuration {
       ipv4_enabled    = false
       private_network = var.network_connection_string
