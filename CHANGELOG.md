@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.2...v1.6.3) (2024-11-13)
+
+### Bug Fixes
+
+* enable backups ([5e241a4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/5e241a40f14525ff7b4ef6f6a33c66b8da52a164))
+
 ## [1.6.2](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.1...v1.6.2) (2024-11-02)
 
 ### Bug Fixes
