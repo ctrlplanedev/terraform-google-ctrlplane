@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.3...v1.6.4) (2024-11-16)
+
+### Bug Fixes
+
+* add kubernetes dep ([acaa5d6](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/acaa5d632cdbbddafc35114c6c74be4fcc12cecf))
+
 ## [1.6.3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.2...v1.6.3) (2024-11-13)
 
 ### Bug Fixes
