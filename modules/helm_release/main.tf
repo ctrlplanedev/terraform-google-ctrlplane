@@ -1,3 +1,17 @@
+resource "kubernetes_manifest" "backend_config" {
+  manifest = {
+    "apiVersion" = "cloud.google.com/v1"
+    "kind"       = "BackendConfig"
+    "metadata" = {
+      "name"      = "ctrlplane-websocket"
+      "namespace" = "default"
+    }
+    "spec" = {
+      "timeoutSec" = 1209600  # 2 weeks
+    }
+  }
+}
+
 locals {
 
   config = {
@@ -20,8 +34,17 @@ locals {
 
     webservice     = { image = { tag = "8264bfc" } },
     migrations     = { image = { tag = "c19dd39" } },
-    "event-worker" = { image = { tag = "8264bfc" } },
+    event-worker   = { image = { tag = "8264bfc" } },
     jobs           = { image = { tag = "8264bfc" } },
+
+    pty-proxy      = { 
+      image = { tag = "8264bfc" } 
+      service = {
+        annotations = {
+          "beta.cloud.google.com/backend-config" = "{\"default\": \"ctrlplane-websocket\"}"
+        }
+      }
+    },
   }
 
   integrations_settings = var.github_bot != null ? {
