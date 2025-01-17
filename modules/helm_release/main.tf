@@ -47,7 +47,7 @@ locals {
     },
   }
 
-  integrations_settings = var.github_bot != null ? {
+  github_settings = var.github_bot != null ? {
     "global.integrations.github.bot.name"          = var.github_bot.name
     "global.integrations.github.bot.appId"         = var.github_bot.app_id
     "global.integrations.github.bot.clientId"      = var.github_bot.client_id
@@ -95,7 +95,8 @@ resource "helm_release" "this" {
       local.auth_providers_settings,
       local.ingress_annotations,
       local.service_account_annotations,
-      local.integrations_settings,
+      local.github_settings,
+      local.azure_app_settings,
     )
 
     content {
