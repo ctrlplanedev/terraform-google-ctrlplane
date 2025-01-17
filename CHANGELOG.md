@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.4...v1.6.5) (2025-01-17)
+
+### Bug Fixes
+
+* Azure app integration ([0409409](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/0409409734a3ba3026f6a16a681d3804b95c799a))
+
 ## [1.6.4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.3...v1.6.4) (2024-11-16)
 
 ### Bug Fixes
