@@ -101,6 +101,8 @@ module "helm_release" {
 
   github_bot = var.github_bot
 
+  azure_app = var.azure_app
+
   values = var.helm_values
 
   redis_host     = module.redis.redis_host

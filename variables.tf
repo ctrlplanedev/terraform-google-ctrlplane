@@ -75,6 +75,15 @@ variable "github_bot" {
   default     = null
 }
 
+variable "azure_app" {
+  type = object({
+    client_id     = string
+    client_secret = string
+  })
+  description = "The Azure app client ID and secret."
+  default     = null
+}
+
 variable "helm_values" {
   type    = any
   default = { otel = { install = true } }

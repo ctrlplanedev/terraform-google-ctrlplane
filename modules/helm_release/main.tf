@@ -7,7 +7,7 @@ resource "kubernetes_manifest" "backend_config" {
       "namespace" = "default"
     }
     "spec" = {
-      "timeoutSec" = 1209600  # 2 weeks
+      "timeoutSec" = 1209600 # 2 weeks
     }
   }
 }
@@ -32,13 +32,13 @@ locals {
       },
     },
 
-    webservice     = { image = { tag = "8264bfc" } },
-    migrations     = { image = { tag = "c19dd39" } },
-    event-worker   = { image = { tag = "8264bfc" } },
-    jobs           = { image = { tag = "8264bfc" } },
+    webservice   = { image = { tag = "8264bfc" } },
+    migrations   = { image = { tag = "c19dd39" } },
+    event-worker = { image = { tag = "8264bfc" } },
+    jobs         = { image = { tag = "8264bfc" } },
 
-    pty-proxy      = { 
-      image = { tag = "8264bfc" } 
+    pty-proxy = {
+      image = { tag = "8264bfc" }
       service = {
         annotations = {
           "beta.cloud.google.com/backend-config" = "{\"default\": \"ctrlplane-websocket\"}"
@@ -54,6 +54,11 @@ locals {
     "global.integrations.github.bot.clientSecret"  = var.github_bot.client_secret
     "global.integrations.github.bot.privateKey"    = var.github_bot.client_private_key
     "global.integrations.github.bot.webhookSecret" = var.github_bot.webhook_secret
+  } : {}
+
+  azure_app_settings = var.azure_app != null ? {
+    "global.integrations.azure.appClientId"     = var.azure_app.client_id
+    "global.integrations.azure.appClientSecret" = var.azure_app.client_secret
   } : {}
 
   auth_providers_settings = {
