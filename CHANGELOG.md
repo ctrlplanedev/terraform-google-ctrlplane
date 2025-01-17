@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.6](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.5...v1.6.6) (2025-01-17)
+
+### Bug Fixes
+
+* Include azure settings in helm release ([8ee9e8a](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/8ee9e8a6570892b929d83bf86de2f4c1fa671fda))
+
 ## [1.6.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.4...v1.6.5) (2025-01-17)
 
 ### Bug Fixes
