@@ -54,7 +54,7 @@ variable "google_auth" {
     client_id     = string
     client_secret = string
   })
-  description = "The Google OAuth client ID and secret."
+  description = "The Google OAuth client ID and secret"
 }
 
 variable "chart_version" {
