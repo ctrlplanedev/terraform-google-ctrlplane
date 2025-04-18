@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.7.0...v1.8.0) (2025-04-18)
+
+### Features
+
+* New policy engine feature flag ([#11](https://github.com/ctrlplanedev/terraform-google-ctrlplane/issues/11)) ([f0301d9](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/f0301d94e99a33092b9ee8e6d0760fa2006daf57))
+
 ## [1.7.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.6.6...v1.7.0) (2025-01-29)
 
 ### Features
