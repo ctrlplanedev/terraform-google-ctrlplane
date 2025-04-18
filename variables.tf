@@ -93,3 +93,8 @@ variable "deploy_helm_release" {
   type    = bool
   default = true
 }
+
+variable "enable_new_policy_engine" {
+  type    = bool
+  default = false
+}

@@ -120,5 +120,7 @@ module "helm_release" {
   global_static_ip_name = google_compute_global_address.this.name
   pre_shared_cert       = google_compute_managed_ssl_certificate.this.name
 
+  enable_new_policy_engine = var.enable_new_policy_engine
+
   depends_on = [module.gke, module.database, module.redis, module.service_accounts]
 }
