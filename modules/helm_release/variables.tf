@@ -94,8 +94,3 @@ variable "values" {
   type    = any
   default = {}
 }
-
-variable "enable_new_policy_engine" {
-  type    = bool
-  default = false
-}
