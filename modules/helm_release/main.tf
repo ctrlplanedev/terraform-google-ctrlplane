@@ -30,8 +30,6 @@ locals {
         password = var.redis_password,
         port     = tostring(var.redis_port),
       },
-
-      enableNewPolicyEngine = var.enable_new_policy_engine,
     },
 
     webservice   = { image = { tag = "8264bfc" } },
