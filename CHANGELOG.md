@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.8.0...v1.9.0) (2025-04-19)
+
+### Features
+
+* Revert policy engine feature flag ([#12](https://github.com/ctrlplanedev/terraform-google-ctrlplane/issues/12)) ([1c279bb](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/1c279bb69c1b7f116893d571c43c97295aa5056d))
+
 ## [1.8.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.7.0...v1.8.0) (2025-04-18)
 
 ### Features
