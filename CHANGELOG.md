@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.10.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.9.0...v1.10.0) (2025-05-07)
+
+### Features
+
+* Max db connections ([#13](https://github.com/ctrlplanedev/terraform-google-ctrlplane/issues/13)) ([7905d05](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/7905d054c22b9eda0d1d04c0f662dbc53abef2c1))
+
 ## [1.9.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.8.0...v1.9.0) (2025-04-19)
 
 ### Features
