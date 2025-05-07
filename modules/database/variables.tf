@@ -23,3 +23,9 @@ variable "deletion_protection" {
   description = "Whether to enable deletion protection for the database instance."
   type        = bool
 }
+
+variable "max_database_connections" {
+  description = "The maximum number of connections to the database"
+  type        = string
+  default     = ""
+}

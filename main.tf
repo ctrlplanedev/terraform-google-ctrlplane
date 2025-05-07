@@ -31,6 +31,8 @@ module "database" {
 
   deletion_protection = var.deletion_protection
 
+  max_database_connections = var.max_database_connections
+
   depends_on = [module.networking]
 }
 

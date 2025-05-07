@@ -20,6 +20,12 @@ variable "postgres_version" {
   default     = "POSTGRES_17"
 }
 
+variable "max_database_connections" {
+  description = "The maximum number of connections to the database"
+  type        = string
+  default     = ""
+}
+
 variable "redis_tier" {
   description = "The tier for the Redis instance"
   type        = string

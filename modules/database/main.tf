@@ -29,6 +29,14 @@ resource "google_sql_database_instance" "this" {
     insights_config {
       query_insights_enabled = true
     }
+
+    dynamic "database_flags" {
+      for_each = var.max_database_connections != "" ? [1] : []
+      content {
+        name  = "max_connections"
+        value = var.max_database_connections
+      }
+    }
   }
 }
 
