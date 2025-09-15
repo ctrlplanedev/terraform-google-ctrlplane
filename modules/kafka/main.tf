@@ -1,3 +1,5 @@
+data "google_client_config" "current" {}
+
 resource "google_managed_kafka_cluster" "this" {
   project    = data.google_client_config.current.project
   cluster_id = "${var.namespace}-kafka-cluster"
