@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.2...v1.11.3) (2025-09-15)
+
+### Bug Fixes
+
+* Use subnet self link correctly ([c9e08d3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/c9e08d3ebe867e85e1f6c58781fa0b5030c86708))
+
 ## [1.11.2](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.1...v1.11.2) (2025-09-15)
 
 ### Bug Fixes
