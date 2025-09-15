@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.10.0...v1.11.0) (2025-09-15)
+
+### Features
+
+* Kafka cluster ([4d11d5f](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/4d11d5fe2378d5fadb71d9428e9141b2e499a558))
+
 ## [1.10.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.9.0...v1.10.0) (2025-05-07)
 
 ### Features
