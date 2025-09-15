@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.1](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.0...v1.11.1) (2025-09-15)
+
+### Bug Fixes
+
+* Bump google provider version ([2497eb2](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/2497eb2daa615992cdbadf0f4ddae4624f3ff329))
+
 ## [1.11.0](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.10.0...v1.11.0) (2025-09-15)
 
 ### Features
