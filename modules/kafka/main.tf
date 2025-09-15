@@ -13,7 +13,7 @@ resource "google_managed_kafka_cluster" "this" {
   gcp_config {
     access_config {
       network_configs {
-        subnet = var.subnetwork_self_link.name
+        subnet = var.subnetwork_self_link
       }
     }
   }
