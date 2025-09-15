@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.3...v1.11.4) (2025-09-15)
+
+### Bug Fixes
+
+* Remove kafka tf ([6ffb02f](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/6ffb02f0b034cec4eb0e57666037c88c1ddd0813))
+
 ## [1.11.3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.2...v1.11.3) (2025-09-15)
 
 ### Bug Fixes
