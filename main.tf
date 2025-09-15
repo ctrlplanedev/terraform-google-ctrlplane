@@ -68,15 +68,6 @@ module "gke" {
   depends_on = [module.networking]
 }
 
-module "kafka" {
-  source    = "./modules/kafka"
-  namespace = var.namespace
-
-  depends_on = [module.networking]
-
-  subnetwork_self_link = module.networking.subnetwork.self_link
-}
-
 module "service_accounts" {
   source    = "./modules/service_accounts"
   namespace = var.namespace
