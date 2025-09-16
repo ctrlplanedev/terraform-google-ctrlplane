@@ -18,6 +18,7 @@ locals {
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-jobs]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-worker]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-queue]",
   ]
 }
 

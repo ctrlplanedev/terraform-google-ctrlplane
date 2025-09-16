@@ -35,6 +35,7 @@ locals {
     webservice   = { image = { tag = "8264bfc" } },
     migrations   = { image = { tag = "c19dd39" } },
     event-worker = { image = { tag = "8264bfc" } },
+    event-queue  = { image = { tag = "03f370a" } },
     jobs         = { image = { tag = "8264bfc" } },
 
     pty-proxy = {
@@ -81,6 +82,8 @@ locals {
     "migrations.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"   = var.service_account_email,
     "event-worker.serviceAccount.create"                                         = true,
     "event-worker.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account" = var.service_account_email,
+    "event-queue.serviceAccount.create"                                          = true,
+    "event-queue.serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"  = var.service_account_email,
   }
 }
 
