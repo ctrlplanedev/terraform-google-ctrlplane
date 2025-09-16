@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.4...v1.11.5) (2025-09-16)
+
+### Bug Fixes
+
+* Add sa for event-queue ([53c5e5a](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/53c5e5aad0062b15606c0602ecb206b86e5038da))
+
 ## [1.11.4](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.3...v1.11.4) (2025-09-15)
 
 ### Bug Fixes
