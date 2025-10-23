@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.6](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.5...v1.11.6) (2025-10-23)
+
+### Bug Fixes
+
+* Bucket rw sa iam binding ([74ab1a3](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/74ab1a37f6488d084268085174b397a1d100c1c7))
+
 ## [1.11.5](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.4...v1.11.5) (2025-09-16)
 
 ### Bug Fixes
