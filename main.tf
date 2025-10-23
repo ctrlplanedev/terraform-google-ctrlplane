@@ -72,7 +72,9 @@ module "service_accounts" {
   source    = "./modules/service_accounts"
   namespace = var.namespace
 
-  depends_on = [module.gke]
+  bucket_name = module.storage.bucket_name
+
+  depends_on = [module.gke, module.storage]
 }
 
 resource "google_compute_global_address" "this" {

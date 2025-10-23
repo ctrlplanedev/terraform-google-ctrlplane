@@ -24,4 +24,9 @@ module "ctrlplane" {
   source    = "../../"
   namespace = var.namespace
   domains   = ["example.com"]
+  fqdn      = "example.com"
+  google_auth = {
+    client_id     = "1234567890"
+    client_secret = "1234567890"
+  }
 }
