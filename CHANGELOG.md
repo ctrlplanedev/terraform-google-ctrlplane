@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.7](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.6...v1.11.7) (2025-10-23)
+
+### Bug Fixes
+
+* Create sa and add gcp annotation ([3d1b068](https://github.com/ctrlplanedev/terraform-google-ctrlplane/commit/3d1b068df6b5874532b714c7e7b4e6d0149ba544))
+
 ## [1.11.6](https://github.com/ctrlplanedev/terraform-google-ctrlplane/compare/v1.11.5...v1.11.6) (2025-10-23)
 
 ### Bug Fixes
