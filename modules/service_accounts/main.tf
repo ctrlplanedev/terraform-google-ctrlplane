@@ -19,6 +19,7 @@ locals {
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-migrations]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-worker]",
     "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-event-queue]",
+    "serviceAccount:${local.project_id}.svc.id.goog[${local.gke_namespace}/ctrlplane-workspace-engine]",
   ]
 }
 
@@ -58,4 +59,10 @@ resource "google_project_iam_member" "gke_sa_token_creator" {
   project = local.project_id
   role    = "roles/iam.serviceAccountTokenCreator"
   member  = local.sa_member
+}
+
+resource "google_storage_bucket_iam_member" "gke_sa_bucket_rw" {
+  bucket = var.bucket_name
+  role   = "roles/storage.objectAdmin"
+  member = local.sa_member
 }
