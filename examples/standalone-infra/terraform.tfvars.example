@@ -1,0 +1,12 @@
+project_id = "my-gcp-project"
+region     = "us-central1"
+name       = "ctrlplane"
+
+# PostgreSQL sizing
+# postgres_tier         = "db-custom-1-3840"  # 1 vCPU, 3.75 GB RAM
+# postgres_disk_size_gb = 10
+# postgres_version      = "POSTGRES_15"
+
+# Kafka sizing (minimum values shown)
+# kafka_vcpu_count   = 3
+# kafka_memory_bytes = 3221225472  # 3 GiB
