@@ -44,3 +44,8 @@ variable "kafka_memory_bytes" {
   type        = number
   default     = 3221225472 # 3 GiB
 }
+
+variable "domain" {
+  description = "Domain name for the ingress (used for managed SSL cert)"
+  type        = string
+}

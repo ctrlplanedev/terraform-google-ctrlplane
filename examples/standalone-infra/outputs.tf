@@ -71,16 +71,30 @@ output "ingress_static_ip_name" {
   value       = google_compute_global_address.ingress.name
 }
 
+output "ssl_certificate_name" {
+  description = "Google-managed SSL certificate name (use in ingress annotations)"
+  value       = google_compute_managed_ssl_certificate.ingress.name
+}
+
+# -----------------------------------------------------------------------------
+# IAM
+# -----------------------------------------------------------------------------
+
+output "service_account_email" {
+  description = "GCP service account email for Workload Identity"
+  value       = google_service_account.ctrlplane.email
+}
+
 # -----------------------------------------------------------------------------
 # Helm Values
 # -----------------------------------------------------------------------------
 
 output "helm_values" {
-  description = "Paste this into your values.yaml override (fill in fqdn + ingress class)"
+  description = "Helm values.yaml override for the ctrlplane chart"
   sensitive   = true
   value       = yamlencode({
     global = {
-      fqdn = "REPLACE_WITH_YOUR_DOMAIN"
+      fqdn = "https://${var.domain}"
       postgresql = {
         user     = google_sql_user.ctrlplane.name
         password = random_password.postgres.result
@@ -99,6 +113,7 @@ output "helm_values" {
       class  = "gce"
       annotations = {
         "kubernetes.io/ingress.global-static-ip-name" = google_compute_global_address.ingress.name
+        "networking.gke.io/managed-certificates"      = google_compute_managed_ssl_certificate.ingress.name
       }
     }
   })

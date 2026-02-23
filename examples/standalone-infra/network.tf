@@ -43,6 +43,8 @@ resource "google_service_networking_connection" "private_vpc" {
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.private_ip_range.name]
 
+  deletion_policy = "ABANDON"
+
   depends_on = [google_project_service.apis]
 }
 
@@ -54,4 +56,20 @@ resource "google_compute_global_address" "ingress" {
   name = "${var.name}-ingress-ip"
 
   depends_on = [google_project_service.apis]
+}
+
+# -----------------------------------------------------------------------------
+# Google-Managed SSL Certificate
+# -----------------------------------------------------------------------------
+
+resource "google_compute_managed_ssl_certificate" "ingress" {
+  name = "${var.name}-ssl-cert"
+
+  managed {
+    domains = [var.domain]
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
