@@ -15,7 +15,6 @@ resource "google_sql_database_instance" "this" {
 
   settings {
     tier                        = var.postgres_tier
-    edition                     = "ENTERPRISE"
     deletion_protection_enabled = var.deletion_protection
 
     backup_configuration {
