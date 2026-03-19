@@ -24,6 +24,8 @@ module "database" {
   source    = "./modules/database"
   namespace = var.namespace
 
+  instance_name = var.database_instance_name
+
   network_connection_string = module.networking.connection.network
 
   postgres_tier    = var.postgres_tier

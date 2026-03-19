@@ -10,7 +10,7 @@ locals {
 }
 
 resource "google_sql_database_instance" "this" {
-  name             = var.namespace
+  name             = coalesce(var.instance_name, var.namespace)
   database_version = var.postgres_version
 
   settings {

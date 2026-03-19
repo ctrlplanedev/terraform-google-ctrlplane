@@ -95,6 +95,12 @@ variable "helm_values" {
   default = { otel = { install = true } }
 }
 
+variable "database_instance_name" {
+  description = "Override the Cloud SQL instance name. Defaults to the namespace."
+  type        = string
+  default     = null
+}
+
 variable "deploy_helm_release" {
   type    = bool
   default = true

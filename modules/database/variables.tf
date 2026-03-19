@@ -3,6 +3,12 @@ variable "namespace" {
   type        = string
 }
 
+variable "instance_name" {
+  description = "Override the Cloud SQL instance name. Defaults to the namespace."
+  type        = string
+  default     = null
+}
+
 variable "postgres_version" {
   description = "Version for Postgres"
   type        = string
