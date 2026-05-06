@@ -16,9 +16,9 @@ variable "name" {
 }
 
 variable "postgres_tier" {
-  description = "Cloud SQL machine tier (db-custom-VCPU-RAM_MB)"
+  description = "Cloud SQL machine tier (Enterprise Plus requires db-perf-optimized-N-*)"
   type        = string
-  default     = "db-custom-1-3840"
+  default     = "db-perf-optimized-N-2"
 }
 
 variable "postgres_disk_size_gb" {

@@ -10,6 +10,7 @@ resource "google_sql_database_instance" "main" {
 
   settings {
     tier            = var.postgres_tier
+    edition         = "ENTERPRISE_PLUS"
     disk_size       = var.postgres_disk_size_gb
     disk_autoresize = true
 
@@ -24,6 +25,16 @@ resource "google_sql_database_instance" "main" {
     backup_configuration {
       enabled    = true
       start_time = "03:00"
+    }
+
+    database_flags {
+      name  = "cloudsql.enable_index_advisor"
+      value = "on"
+    }
+
+    database_flags {
+      name  = "deadlock_timeout"
+      value = "1000"
     }
   }
 
